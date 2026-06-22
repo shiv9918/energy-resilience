@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+langgraph
+langchain-groq
+groq
+pandas
+python-dotenv
+pydantic
+httpx
+sqlalchemy
