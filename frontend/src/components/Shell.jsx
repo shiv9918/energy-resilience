@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const NAV_SCREENS = [
   { id: 'dashboard',  icon: 'language',        label: 'STRATEGIC' },
@@ -8,6 +9,7 @@ const NAV_SCREENS = [
 ]
 
 export default function Shell({ activeScreen, onNavigate, onRunPipeline, pipeLoading, children }) {
+  const navigate = useNavigate()
   const [clock, setClock] = useState('')
 
   useEffect(() => {
@@ -27,7 +29,8 @@ export default function Shell({ activeScreen, onNavigate, onRunPipeline, pipeLoa
       <header className="fixed top-0 w-full z-50 flex justify-between items-center px-8 h-16"
         style={{background:'rgba(19,19,21,0.85)',backdropFilter:'blur(16px)',borderBottom:'1px solid rgba(60,73,78,0.4)'}}>
         <div className="flex items-center gap-8">
-          <span className="mono font-black tracking-tighter text-xl" style={{color:'#00d1ff'}}>SENTINEL</span>
+          <span className="mono font-black tracking-tighter text-xl cursor-pointer" style={{color:'#00d1ff'}}
+            onClick={() => navigate('/')}>SENTINEL</span>
           <div className="hidden md:flex items-center gap-4 px-4" style={{borderLeft:'1px solid rgba(60,73,78,0.4)'}}>
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full status-pulse" style={{background:'#5bffa1'}}/>
