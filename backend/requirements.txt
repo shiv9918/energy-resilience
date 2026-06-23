@@ -3,6 +3,8 @@ uvicorn
 langgraph
 langchain-groq
 groq
+langchain-openai
+openai
 pandas
 python-dotenv
 pydantic
